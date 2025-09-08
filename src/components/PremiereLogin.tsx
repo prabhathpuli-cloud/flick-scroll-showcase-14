@@ -21,9 +21,9 @@ function FloatingTicket({ position }: { position: [number, number, number] }) {
     <mesh ref={meshRef} position={position}>
       <boxGeometry args={[3, 1.8, 0.1]} />
       <meshStandardMaterial 
-        color="#f5f5dc"
-        metalness={0.1}
-        roughness={0.3}
+        color="#FFD700"
+        metalness={0.4}
+        roughness={0.2}
       />
       {/* Ticket perforations */}
       <mesh position={[-1.3, 0, 0.06]}>
@@ -251,12 +251,11 @@ export default function PremiereLogin({ onLogin }: PremiereLoginProps) {
     <div className="w-full h-screen relative overflow-hidden">
       {/* Background gradient */}
       <div 
-        className="absolute inset-0 opacity-80"
+        className="absolute inset-0 opacity-90"
         style={{
           background: `
-            radial-gradient(circle at 20% 80%, hsl(0 75% 45% / 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, hsl(43 96% 60% / 0.2) 0%, transparent 50%),
-            var(--gradient-premier)
+            linear-gradient(135deg, hsl(240 10% 8%) 0%, hsl(240 15% 12%) 40%, hsl(43 15% 15%) 100%),
+            radial-gradient(circle at 50% 20%, hsl(43 70% 25% / 0.1) 0%, transparent 60%)
           `
         }}
       />
