@@ -67,11 +67,16 @@ export default {
         'gradient-cinematic': 'var(--gradient-cinematic)',
         'gradient-card': 'var(--gradient-card)',
         'gradient-glow': 'var(--gradient-glow)',
+        'gradient-red-carpet': 'var(--gradient-red-carpet)',
+        'gradient-premier': 'var(--gradient-premier)',
+        'gradient-ticket': 'var(--gradient-ticket)',
       },
       boxShadow: {
         'cinematic': 'var(--shadow-cinematic)',
         'glow': 'var(--shadow-glow)',
         'card': 'var(--shadow-card)',
+        'ticket': 'var(--shadow-ticket)',
+        'premier': 'var(--shadow-premier)',
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import ScriptCarousel from "@/components/ScriptCarousel";
 import ScriptModal from "@/components/ScriptModal";
+import PremiereLogin from "@/components/PremiereLogin";
 
 // Import script images
 import noirImage from "@/assets/script-noir.jpg";
@@ -193,6 +194,7 @@ These gardens have bloomed for four hundred years. I will not be the generation 
 const Index = () => {
   const [selectedScript, setSelectedScript] = useState<Script | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleScriptSelect = (script: Script) => {
     setSelectedScript(script);
@@ -204,6 +206,20 @@ const Index = () => {
     setSelectedScript(null);
   };
 
+  const handleLogin = (username: string, password: string) => {
+    // For demo purposes, accept any non-empty credentials
+    // In a real app, this would validate against your backend
+    if (username.trim() && password.trim()) {
+      setIsLoggedIn(true);
+    }
+  };
+
+  // Show login screen if not authenticated
+  if (!isLoggedIn) {
+    return <PremiereLogin onLogin={handleLogin} />;
+  }
+
+  // Show main script library after login
   return (
     <div className="min-h-screen">
       <Hero />
